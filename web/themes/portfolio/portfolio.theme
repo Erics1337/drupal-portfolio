@@ -1,0 +1,36 @@
+<?php
+
+function portfolio_preprocess_page(&$variables)
+{
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['linkedin'] = theme_get_setting('linkedin');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['copyright'] = theme_get_setting('copyright');
+  $variables['logo_path'] = theme_get_setting('logo.url');
+  $variables['cv_link'] = theme_get_setting('resume');
+
+  $variables['hero_title'] = theme_get_setting('hero_title');
+  $variables['hero_title2'] = theme_get_setting('hero_title2');
+  $variables['hero_description'] = theme_get_setting('hero_description');
+  $variables['hero_linkedin'] = theme_get_setting('hero_linkedin');
+  $variables['hero_image'] = theme_get_setting('hero_image');
+
+  $variables['getintouch_title'] = theme_get_setting('getintouch_title');
+  $variables['getintouch_des'] = theme_get_setting('getintouch_des');
+  $variables['getintouch_phone'] = theme_get_setting('getintouch_phone');
+  $variables['getintouch_email'] = theme_get_setting('getintouch_email');
+  $variables['getintouch_location'] = theme_get_setting('getintouch_location');
+}
+ 
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function portfolio_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}

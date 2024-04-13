@@ -1,0 +1,26 @@
+name: Portfolio Theme
+type: theme
+'base theme': stable9
+package: CUSTOM
+version: VERSION
+core_version_requirement: ^9.5 || ^10
+libraries:
+  - portfolio/global_styles
+
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  hero: Hero (full width)
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  social: Social Bar
+  service: Services Section
+  content_above: Content Above
+  title: Title
+  content: Content
+  sidebar: Sidebar
+  content_below: Content Below
+  footer_top: Footer Top
+  footer_bottom: Footer Bottom
+  hidden: Hidden

@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+	<!-- Testimonial area start -->
+	<section id="testimonial" class="bd-testimonial__area section-space">
+		<div class="container">
+			<div class="row g-5">
+				<div class="col-xl-6 col-lg-6">
+					<div class="section__title-wrapper section__title-space">
+						<span class="section__subtitle bg-field">TESTIMONIAL
+						</span>
+						<h2 class="section__title">What They Say</h2>
+					</div>
+				</div>
+			</div>
+			<div class="testimonial__wrapper style-two  wow fadeInUp" data-wow-delay=".3s">
+				<div class="row align-items-center g-5">
+					<div class="col-lg-3 col-md-5">
+						<div class="testimonial__thumb">
+							<img src="/themes/portfolio/assets/images/testimonial/testimonial-02.png" alt="image not found">
+							<div class="testimonial__shape">
+								<img class="testimonial__shape-dot" src="/themes/portfolio/assets/images/shape/dot-shape.png" alt="image not found">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-7">
+						<div class="testimonial__item">
+							<div class="swiper testimonial__active">
+								<div class="swiper-wrapper">
+								{% for row in rows %}
+									<div class="swiper-slide">
+										<div class="testimonial__content">
+											<div class="testimonial__shape-icon">
+												<img src="/themes/portfolio/assets/images/shape/testimonial-quote-02.png" alt="image not found">
+											</div>
+											<div class="testimonial__text">
+												<p> {{ row.content['#row']._entity.field_description[0].value }}</p>
+												</div>
+											<div class="testimonial__avatar-info">
+												<h6 class="testimonial__avatar-title">{{ row.content['#row']._entity.field_name[0].value }}</h6>
+												<span class="testimonial__avatar-designation">{{ row.content['#row']._entity.field_designation[0].value }}</span>
+											</div>
+										</div>
+									</div> 
+									{% endfor %}
+								</div>
+							</div>
+							<!-- If we need navigation buttons -->
+							<div class="testimonial__navigation d-none d-sm-block">
+								<button class="testimonial__button-prev circle-btn slider__nav-btn">
+									<i class="fa-regular fa-arrow-left-long"></i>
+								</button>
+								<button class="testimonial__button-next circle-btn ml-5 slider__nav-btn">
+									<i class="fa-regular fa-arrow-right-long"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Testimonial area end -->
+	<div class="section__divider">
+		<hr>
+	</div>
