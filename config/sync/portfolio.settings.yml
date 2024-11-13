@@ -4,7 +4,7 @@ features:
   comment_user_verification: 1
   favicon: 1
 logo:
-  use_default: 1
+  use_default: 0
   path: themes/portfolio/logo.png
 favicon:
   use_default: 1
@@ -13,13 +13,13 @@ twitter: '#Twitter'
 linkedin: '#'
 copyright: 'Copyright @ 2025 Programming Mentor. All Right Reserved'
 resume: '#'
-hero_title: 'Hello, I’m Eric'
-hero_description: 'Specializing in custom module development, theme design, and scalable, secure web solutions tailored to your business needs'
+hero_title: 'Hello, I’m Jhone'
+hero_description: 'We are a minimal portfolio agency that specializes in providing quality website and branding solutions to design and coding.  Li'
 hero_linkedin: '#'
 hero_image: themes/portfolio/assets/images/heroimage.png
-hero_title2: ' A Drupal Developer Looking for Remote Work'
+hero_title2: ' A Portfolio Agency Based in Florida'
 getintouch_title: 'Feel Free Contact me'
 getintouch_des: "I'm generally available during regular business hours Specify your working hours, but I'll make an effort to respond to your mes"
-getintouch_phone: '+15186942779'
-getintouch_email: erics1337@gmail.com
+getintouch_phone: '+13322078097'
+getintouch_email: abcd@gmail.com
 getintouch_location: '672 Tallahassee Florida'
