@@ -1,0 +1,37 @@
+uuid: c7ac9100-79a5-42eb-ba1e-b86fc7cf3200
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.professional_services.field_description
+    - field.field.node.professional_services.field_icon
+    - node.type.professional_services
+  module:
+    - user
+id: node.professional_services.default
+targetEntityType: node
+bundle: professional_services
+mode: default
+content:
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_icon:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

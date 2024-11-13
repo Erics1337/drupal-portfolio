@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../../fonts/icomoond57e.eot?whyess');
+  src:  url('../../fonts/icomoond57e.eot?whyess#iefix') format('embedded-opentype'),
+    url('../../fonts/icomoond57e.ttf?whyess') format('truetype'),
+    url('../../fonts/icomoond57e.woff?whyess') format('woff'),
+    url('../../fonts/icomoond57e.svg?whyess#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-trophy-01:before {
+  content: "\e92c";
+}
+.icon-trophy-02:before {
+  content: "\e92d";
+}
+.icon-trophy-03:before {
+  content: "\e92e";
+}
+.icon-trophy-04:before {
+  content: "\e92f";
+}
+.icon-analysis:before {
+  content: "\e900";
+}
+.icon-animation:before {
+  content: "\e901";
+}
+.icon-application:before {
+  content: "\e902";
+}
+.icon-arrow-small:before {
+  content: "\e903";
+}
+.icon-award:before {
+  content: "\e904";
+}
+.icon-behance:before {
+  content: "\e905";
+}
+.icon-business:before {
+  content: "\e906";
+}
+.icon-calender:before {
+  content: "\e907";
+}
+.icon-category:before {
+  content: "\e908";
+}
+.icon-community:before {
+  content: "\e909";
+}
+.icon-creative:before {
+  content: "\e90a";
+}
+.icon-date:before {
+  content: "\e90b";
+}
+.icon-design:before {
+  content: "\e90c";
+}
+.icon-employe:before {
+  content: "\e90d";
+}
+.icon-envelope:before {
+  content: "\e90e";
+}
+.icon-facebook:before {
+  content: "\e90f";
+}
+.icon-game:before {
+  content: "\e910";
+}
+.icon-grow:before {
+  content: "\e911";
+}
+.icon-instagram:before {
+  content: "\e912";
+}
+.icon-left-arrow:before {
+  content: "\e913";
+}
+.icon-linkedin:before {
+  content: "\e914";
+}
+.icon-location:before {
+  content: "\e915";
+}
+.icon-lock:before {
+  content: "\e916";
+}
+.icon-member:before {
+  content: "\e917";
+}
+.icon-partner:before {
+  content: "\e918";
+}
+.icon-phone:before {
+  content: "\e919";
+}
+.icon-plane:before {
+  content: "\e91a";
+}
+.icon-play:before {
+  content: "\e91b";
+}
+.icon-plus:before {
+  content: "\e91c";
+}
+.icon-project:before {
+  content: "\e91d";
+}
+.icon-question:before {
+  content: "\e91e";
+}
+.icon-responsive:before {
+  content: "\e91f";
+}
+.icon-right-arrow:before {
+  content: "\e920";
+}
+.icon-rocket:before {
+  content: "\e921";
+}
+.icon-search:before {
+  content: "\e922";
+}
+.icon-star:before {
+  content: "\e923";
+}
+.icon-strategy:before {
+  content: "\e924";
+}
+.icon-support:before {
+  content: "\e925";
+}
+.icon-time:before {
+  content: "\e926";
+}
+.icon-time-small:before {
+  content: "\e927";
+}
+.icon-trophy:before {
+  content: "\e928";
+}
+.icon-twiter:before {
+  content: "\e929";
+}
+.icon-user:before {
+  content: "\e92a";
+}
+.icon-ux-design:before {
+  content: "\e92b";
+}

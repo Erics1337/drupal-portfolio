@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<section id="homeworks" class="bd-portfolio__area section-space">
+	<div class="container">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10">
+				<div class="section__title-wrapper text-center section__title-space">
+					 <h2 class="section__title mb-20">Project Portfolio</h2>  
+			</div>
+		</div>
+		<div class="portfolio__wrapper">
+			<div class="row grid g-5 wow fadeInUp" data-wow-delay=".3s">
+			{% for row in rows %}  
+				<div class="col-xl-4 col-lg-6 col-md-6 grid-item">
+					<div class=" portfolio__item style-two">
+						<div class="portfolio__item-thumb">
+							<a href="/node/{{ row.content['#row']._entity.nid[0].value }}"><img src="{{file_url(row.content['#row']._entity.field_image.entity.fileuri)}}" alt="image not found"></a>
+						</div>
+						<div class="portfolio__item-content">
+							<div class="portfolio__item-info">
+								<div class="portfolio__tag">
+									<a href="/node/{{ row.content['#row']._entity.nid[0].value }}">{{ row.content['#row']._entity.field_portfolio_category.0.entity.name.value }}</a>
+								</div>
+								<h5 class="portfolio__item-title underline">
+									<a href="/node/{{ row.content['#row']._entity.nid[0].value }}">{{ row.content['#row']._entity.title[0].value }}</a>
+								</h5>
+							</div>
+							
+							<div class="portfolio__item-btn">
+								<a href="/node/{{ row.content['#row']._entity.nid[0].value }}" class="circle-btn is-bg-white">
+									<span class="icon__box">
+										<i class="fa-regular fa-arrow-right-long"></i>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			 {% endfor %}
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="portfolio__more text-center mt-50">
+						<a class="bd-btn is-btn-anim" href="/portfolio">
+							<span class="bd-btn-inner">
+								<span class="bd-btn-normal">View all project</span>
+								<span class="bd-btn-hover">View all project</span>
+								<i class="contentHidden"></i>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="section__divider">
+		<hr>
+	</div>

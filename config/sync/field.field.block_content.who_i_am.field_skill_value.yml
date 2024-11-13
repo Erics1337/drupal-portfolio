@@ -1,0 +1,23 @@
+uuid: 724640bd-53d2-4188-ae23-166328f1347c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.who_i_am
+    - field.storage.block_content.field_skill_value
+id: block_content.who_i_am.field_skill_value
+field_name: field_skill_value
+entity_type: block_content
+bundle: who_i_am
+label: 'Skill value'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

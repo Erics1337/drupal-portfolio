@@ -1,0 +1,11 @@
+uuid: db6de48b-7748-4ad9-9ebe-d02f0bf1839e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.professional_services
+id: node.professional_services
+target_entity_type_id: node
+target_bundle: professional_services
+default_langcode: site_default
+language_alterable: false

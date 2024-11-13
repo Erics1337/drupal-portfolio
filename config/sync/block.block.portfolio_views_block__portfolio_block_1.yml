@@ -1,0 +1,24 @@
+uuid: a4cf48b5-6ec5-4f87-8104-8885c995174f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.portfolio
+  module:
+    - views
+  theme:
+    - portfolio
+id: portfolio_views_block__portfolio_block_1
+theme: portfolio
+region: service
+weight: -6
+provider: null
+plugin: 'views_block:portfolio-block_1'
+settings:
+  id: 'views_block:portfolio-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

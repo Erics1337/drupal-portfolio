@@ -1,0 +1,25 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+  path: themes/portfolio/logo.png
+favicon:
+  use_default: 1
+facebook: '#facebook'
+twitter: '#Twitter'
+linkedin: '#'
+copyright: 'Copyright @ 2025 Programming Mentor. All Right Reserved'
+resume: '#'
+hero_title: 'Hello, I’m Eric'
+hero_description: 'Specializing in custom module development, theme design, and scalable, secure web solutions tailored to your business needs'
+hero_linkedin: '#'
+hero_image: themes/portfolio/assets/images/heroimage.png
+hero_title2: ' A Drupal Developer Looking for Remote Work'
+getintouch_title: 'Feel Free Contact me'
+getintouch_des: "I'm generally available during regular business hours Specify your working hours, but I'll make an effort to respond to your mes"
+getintouch_phone: '+15186942779'
+getintouch_email: erics1337@gmail.com
+getintouch_location: '672 Tallahassee Florida'

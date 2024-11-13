@@ -1,0 +1,35 @@
+global_styles:
+  css:
+    theme:
+      assets/css/vendor/bootstrap.min.css: {}
+      assets/css/vendor/animate.min.css: {}
+      assets/css/plugins/swiper.min.css: {}
+      assets/css/plugins/slick.css: {}
+      assets/css/vendor/magnific-popup.css: {}
+      assets/css/vendor/fontawesome-pro.css: {}
+      assets/css/vendor/hover-reveal.css: {}
+      assets/css/vendor/icomoon.css: {}
+      assets/css/vendor/spacing.css: {}
+      assets/css/main.css: {}
+  js: 
+    assets/js/vendor/jquery-3.6.0.min.js: {} 
+    assets/js/plugins/waypoints.min.js: {} 
+    assets/js/vendor/bootstrap.bundle.min.js: {} 
+    assets/js/plugins/meanmenu.min.js: {} 
+    assets/js/plugins/swiper.min.js: {} 
+    assets/js/vendor/tween-max.js: {} 
+    assets/js/plugins/wow.js: {} 
+    assets/js/vendor/magnific-popup.min.js: {} 
+    assets/js/vendor/isotope.pkgd.min.js: {} 
+    assets/js/vendor/imagesloaded.pkgd.min.js: {} 
+    assets/js/vendor/vanilla.tilt.js: {} 
+    assets/js/plugins/counterup.js: {} 
+    assets/js/plugins/nice-select.min.js: {} 
+    assets/js/vendor/jquery-ui.min.js: {} 
+    assets/js/vendor/hover-reveal.js: {} 
+    assets/js/plugins/parallax.min.js: {} 
+    assets/js/plugins/parallax-scroll.js: {} 
+    assets/js/plugins/jarallax.min.js: {} 
+    assets/js/vendor/ajax-form.js: {} 
+    assets/js/vendor/js_circle-progress.min.js: {} 
+    assets/js/main.js: {} 

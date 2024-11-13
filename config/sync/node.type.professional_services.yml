@@ -1,0 +1,17 @@
+uuid: 5a0749b3-aa9d-4a44-8213-abcfaf8e47a5
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Professional Services'
+type: professional_services
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

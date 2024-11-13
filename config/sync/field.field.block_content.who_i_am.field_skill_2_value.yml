@@ -1,0 +1,19 @@
+uuid: 04225f04-41c1-43c9-9673-d3c577752d9a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.who_i_am
+    - field.storage.block_content.field_skill_2_value
+id: block_content.who_i_am.field_skill_2_value
+field_name: field_skill_2_value
+entity_type: block_content
+bundle: who_i_am
+label: 'Skill 2 value'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

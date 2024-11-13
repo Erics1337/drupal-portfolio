@@ -1,0 +1,11 @@
+uuid: 04f99d64-eb50-41dc-85c8-287ea40bad7e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.who_i_am
+id: block_content.who_i_am
+target_entity_type_id: block_content
+target_bundle: who_i_am
+default_langcode: site_default
+language_alterable: false

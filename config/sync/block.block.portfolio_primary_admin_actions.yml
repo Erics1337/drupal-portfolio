@@ -1,0 +1,20 @@
+uuid: 68f0e0cc-432e-4b42-b51d-4cd19f6ecccd
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - portfolio
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: portfolio_primary_admin_actions
+theme: portfolio
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
