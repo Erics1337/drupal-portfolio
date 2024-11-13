@@ -4,7 +4,7 @@
 # to power your Platform.sh project.
 
 db:
-    type: mysql:8
+    type: oracle-mysql:8
     disk: 2048
 
 cache:
