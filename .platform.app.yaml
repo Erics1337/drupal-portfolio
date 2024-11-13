@@ -27,7 +27,7 @@ runtime:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-    database: 'db:mariadb'
+    database: 'db:mysql'
     redis: 'cache:redis'
 
 # The size of the persistent disk of the application (in MB).
