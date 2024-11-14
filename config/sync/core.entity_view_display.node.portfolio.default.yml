@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.portfolio.body
     - field.field.node.portfolio.field_image
     - field.field.node.portfolio.field_portfolio_category
+    - image.style.wide
     - node.type.portfolio
   module:
     - image
@@ -28,7 +29,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: wide
       image_loading:
         attribute: eager
     third_party_settings: {  }

@@ -1,20 +1,25 @@
-uuid: 64cf81f7-e860-4857-9b58-9601c9aa0a14
+uuid: 35423ab6-f2b7-4d71-81bf-d712676096a8
 langcode: en-gb
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - node.type.portfolio
+    - field.storage.media.field_media_image
+    - media.type.image
   module:
     - image
-id: node.portfolio.field_image
-field_name: field_image
-entity_type: node
-bundle: portfolio
+  enforced:
+    module:
+      - media
+_core:
+  default_config_hash: P7CkVOgjDXiN26Fm2hniNei-XPK3iuZTlcBGqreTbJ0
+id: media.image.field_media_image
+field_name: field_media_image
+entity_type: media
+bundle: image
 label: Image
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -23,14 +28,14 @@ settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg webp'
   max_filesize: ''
-  max_resolution: 640x480
+  max_resolution: ''
   min_resolution: ''
-  alt_field: false
+  alt_field: true
   alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: null
     alt: ''
     title: ''
     width: null
