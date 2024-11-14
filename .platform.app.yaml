@@ -35,7 +35,7 @@ disk: 2048
 
 # The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
-    'sites/default/files': 'shared:files/default'
+    # 'sites/default/files': 'shared:files/default'
     '/web/sites/default/files':
         source: local
         source_path: 'files'
