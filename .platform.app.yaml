@@ -28,7 +28,7 @@ runtime:
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
     database: 'db:mysql'
-    redis: 'cache:redis'
+    # redis: 'cache:redis'
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
@@ -36,9 +36,9 @@ disk: 2048
 # The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
     'sites/default/files': 'shared:files/default'
-    # '/web/sites/default/files':
-    #     source: local
-    #     source_path: 'files'
+    '/web/sites/default/files':
+        source: local
+        source_path: 'files'
     # Drupal gets its own dedicated tmp directory. The settings.platformsh.php
     # file will automatically configure Drupal to use this directory.
     '/tmp':
