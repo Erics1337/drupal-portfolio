@@ -11,7 +11,7 @@ dependencies:
 id: portfolio_views_block__testimonial_block_1
 theme: portfolio
 region: service
-weight: -4
+weight: -5
 provider: null
 plugin: 'views_block:testimonial-block_1'
 settings:

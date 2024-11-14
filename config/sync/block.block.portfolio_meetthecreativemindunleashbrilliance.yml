@@ -11,7 +11,7 @@ dependencies:
 id: portfolio_meetthecreativemindunleashbrilliance
 theme: portfolio
 region: service
-weight: -5
+weight: -6
 provider: null
 plugin: 'block_content:e9dfb357-fbcf-4e9c-9b9d-1737d5a6ea1b'
 settings:

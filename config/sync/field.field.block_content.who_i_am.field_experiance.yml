@@ -9,7 +9,7 @@ id: block_content.who_i_am.field_experiance
 field_name: field_experiance
 entity_type: block_content
 bundle: who_i_am
-label: Experiance
+label: Experience
 description: ''
 required: true
 translatable: false

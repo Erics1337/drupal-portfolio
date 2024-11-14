@@ -11,7 +11,7 @@ dependencies:
 id: portfolio_views_block__portfolio_block_1
 theme: portfolio
 region: service
-weight: -6
+weight: -7
 provider: null
 plugin: 'views_block:portfolio-block_1'
 settings:

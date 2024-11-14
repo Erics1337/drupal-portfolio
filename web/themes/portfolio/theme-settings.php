@@ -126,6 +126,7 @@ function portfolio_form_system_theme_settings_alter(&$form, &$form_state)
     '#type' => 'textfield',
     '#title' => t('Hero Description'),
     '#default_value' => theme_get_setting('hero_description'),
+    '#maxlength' => 400,
   );
   $form['hero_section']['hero_linkedin'] = array(
     '#type' => 'textfield',
