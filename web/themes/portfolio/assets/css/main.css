@@ -13061,7 +13061,7 @@ input:checked + .switch:before {
   display: none;
 }
 .faq__style-4 .bd__faq .accordion-button::before {
-  content: "+";
+  content: "5";
   font-family: "Font Awesome 6 Pro";
   position: absolute;
   color: var(--bd-theme-primary);
