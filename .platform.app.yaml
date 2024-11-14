@@ -35,6 +35,7 @@ disk: 2048
 
 # The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
+    'sites/default/files': 'shared:files/default'
     # The default Drupal files directory.
     '/web/sites/default/files':
         source: local
