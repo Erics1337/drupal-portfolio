@@ -29,6 +29,9 @@ $settings['state_cache'] = TRUE;
 // local development.
 // $settings['hash_salt'] = 'change_me';
 
+$settings['file_public_path'] = 'sites/default/files';
+
+
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
