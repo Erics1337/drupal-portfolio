@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  drupal:
+    image: drupal:10-apache
+    ports:
+      - "80:80"
+    volumes:
+      - ./drupal:/var/www/html
+    environment:
+      DRUPAL_DB_HOST: db
+      DRUPAL_DB_NAME: drupal
+      DRUPAL_DB_USER: drupaluser
+      DRUPAL_DB_PASSWORD: your_password
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.5
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpassword
+      MARIADB_DATABASE: drupal
+      MARIADB_USER: drupaluser
+      MARIADB_PASSWORD: your_password
+
+volumes:
+  db_data:
