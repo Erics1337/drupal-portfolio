@@ -12,6 +12,7 @@ services:
       DRUPAL_DB_NAME: drupal
       DRUPAL_DB_USER: drupaluser
       DRUPAL_DB_PASSWORD: your_password
+      IS_LIGHTSAIL_ENV: 'true'
     depends_on:
       - db
 

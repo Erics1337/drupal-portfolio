@@ -37,13 +37,19 @@ if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
 }
 
-// Local settings. These come last so that they can override anything.
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
-}
-
 // Automatically generated include for settings managed by ddev.
 $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
+}
+
+// Include settings for Lightsail Docker environment if present.
+$lightsail_settings = dirname(__FILE__) . '/settings.lightsail.php';
+if (getenv('IS_LIGHTSAIL_ENV') == 'true' && is_readable($lightsail_settings)) {
+  include $lightsail_settings;
+}
+
+// Local settings. These come last so that they can override anything.
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
 }
