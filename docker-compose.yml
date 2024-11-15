@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /home/ubuntu/drupal-portfolio:/var/www/html
+      - /home/ec2-user/drupal-portfolio:/var/www/html
     environment:
       DRUPAL_DB_HOST: db
       DRUPAL_DB_NAME: drupal
