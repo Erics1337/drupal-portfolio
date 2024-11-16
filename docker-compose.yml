@@ -19,9 +19,7 @@ services:
       - db
 
   db:
-    build:
-      context: .
-    image: mariadb
+    image: mariadb:10.5
     ports:
       - "3306:3306"
     environment:
