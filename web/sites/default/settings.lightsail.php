@@ -15,6 +15,8 @@ $databases = [
   ],
 ];
 
+$config['system.logging']['error_level'] = 'verbose';
+
 // Salt for secure hashing of passwords
 $settings['hash_salt'] = getenv('DRUPAL_HASH_SALT') ?: 'some-random-hash-value';
 
