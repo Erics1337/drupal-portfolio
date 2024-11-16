@@ -3,9 +3,6 @@ FROM drupal:10-apache
 # Install nano and unzip for editing and extraction purposes (optional)
 RUN apt-get update && apt-get install -y nano unzip
 
-# Install Drush globally using Composer
-RUN composer global require drush/drush
-
 # Add Composer's global bin to the PATH for Drush to be available globally
 ENV PATH="/root/.composer/vendor/bin:${PATH}"
 
@@ -22,4 +19,7 @@ COPY . /var/www/html
 RUN composer install
 
 # Set the working directory to the web root
-WORKDIR /var/www/html/web
+WORKDIR /var/www/html
+
+RUN composer install
+
