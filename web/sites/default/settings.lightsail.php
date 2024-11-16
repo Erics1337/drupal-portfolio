@@ -27,8 +27,8 @@ $settings['file_temp_path'] = '/tmp';
 $settings['trusted_host_patterns'] = [
   '^localhost$',
   '^127\.0\.0\.1$',
-  '^your-public-ip$',
-  '^your-domain\.com$',
+  '^http://54.205.25.75/$',
+  '^ericsdrupalportfolio.com$',
 ];
 
 // Config sync directory (if using configuration management)
