@@ -30,6 +30,7 @@ $settings['state_cache'] = TRUE;
 // $settings['hash_salt'] = 'change_me';
 
 $settings['file_public_path'] = 'sites/default/files';
+$config['system.logging']['error_level'] = 'verbose';
 
 
 // Automatic Platform.sh settings.
