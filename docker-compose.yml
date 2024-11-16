@@ -9,7 +9,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./drupal:/var/www/html
+      - ./:/var/www/html
     environment:
       DRUPAL_DB_HOST: db
       DRUPAL_DB_NAME: drupal
