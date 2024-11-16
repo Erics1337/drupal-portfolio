@@ -1,5 +1,13 @@
 FROM drupal:10-apache
 
+
+# Dockerfile for temporary MariaDB container
+FROM mariadb:10.5
+
+CMD ["mysqld", "--skip-grant-tables", "--disable-log-bin"]
+
+
+
 # Install nano and unzip for editing and extraction purposes (optional)
 RUN apt-get update && apt-get install -y nano unzip
 
