@@ -12,8 +12,14 @@ ENV PATH="/root/.composer/vendor/bin:${PATH}"
 # Enable Apache rewrite module for Drupal clean URLs
 RUN a2enmod rewrite
 
-# Copy custom Apache config file if needed
-COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+# Set the working directory to the project root (where composer.json is located)
+WORKDIR /var/www/html
+
+# Copy the entire project to the container
+COPY . /var/www/html
+
+# Install Composer dependencies, including Drupal core
+RUN composer install
 
 # Set the working directory to the web root
-WORKDIR /var/www/html
+WORKDIR /var/www/html/web
