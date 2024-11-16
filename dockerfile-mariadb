@@ -1,0 +1,5 @@
+# Dockerfile for temporary MariaDB container to bypass grant tables
+FROM mariadb:10.5
+
+# Start the MariaDB server with --skip-grant-tables to bypass grant issues
+CMD ["mysqld", "--skip-grant-tables", "--disable-log-bin"]

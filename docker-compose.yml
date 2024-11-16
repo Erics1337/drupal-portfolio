@@ -2,34 +2,31 @@ version: '3'
 
 services:
   drupal:
+    build:
+      context: .
+      dockerfile: dockerfile-drupal
     image: drupal-custom
     ports:
       - "80:80"
     volumes:
-      - /home/ec2-user/drupal-portfolio:/var/www/html
-      - /home/ec2-user/drupal-portfolio/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./drupal:/var/www/html
     environment:
       DRUPAL_DB_HOST: db
       DRUPAL_DB_NAME: drupal
       DRUPAL_DB_USER: drupaluser
       DRUPAL_DB_PASSWORD: your_password
-      IS_LIGHTSAIL_ENV: 'true'
     depends_on:
       - db
-    command: >
-      bash -c "composer install --working-dir=/var/www/html && apache2-foreground"
 
   db:
-    image: mariadb:10.5
-    volumes:
-      - db_data:/var/lib/mysql
-      # ensures that data is persistent across container restarts.
-      - ./db-init:/docker-entrypoint-initdb.d
+    build:
+      context: .
+      dockerfile: dockerfile-mariadb
+    image: custom-mariadb-fix
+    ports:
+      - "3306:3306"
     environment:
-      MARIADB_ROOT_PASSWORD: rootpassword
-      MARIADB_DATABASE: drupal
-      MARIADB_USER: drupaluser
-      MARIADB_PASSWORD: your_password
-
-volumes:
-  db_data:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupaluser
+      MYSQL_PASSWORD: your_password
