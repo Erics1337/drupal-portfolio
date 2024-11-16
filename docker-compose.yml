@@ -2,11 +2,12 @@ version: '3'
 
 services:
   drupal:
-    image: drupal:10-apache
+    image: drupal-custom
     ports:
       - "80:80"
     volumes:
       - /home/ec2-user/drupal-portfolio:/var/www/html
+      - /home/ec2-user/drupal-portfolio/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
     environment:
       DRUPAL_DB_HOST: db
       DRUPAL_DB_NAME: drupal
