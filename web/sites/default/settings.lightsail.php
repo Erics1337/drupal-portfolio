@@ -31,10 +31,12 @@ $settings['trusted_host_patterns'] = [
   '^127\.0\.0\.1$',
   '^54\.205\.25\.75$',
   '^ericsdrupalportfolio.com$',
+  '^www\.ericsdrupalportfolio\.com$',
 ];
 
 // Config sync directory (if using configuration management)
 // $config_directories[CONFIG_SYNC_DIRECTORY] = '/var/www/html/sites/default/files/config/sync';
+$settings['config_sync_directory'] = '/var/www/html/sites/default/files/config/sync';
 
 // Allow installation scripts to write the settings file when needed.
 $settings['config_sync_directory'] = 'sites/default/files/config/sync';
