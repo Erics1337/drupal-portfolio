@@ -4,6 +4,10 @@ FROM drupal:10-apache
 # Enable Apache rewrite and SSL modules for clean URLs and HTTPS support
 RUN a2enmod rewrite ssl
 
+# Copy your custom SSL Apache configuration into the container
+COPY ./apache/ssl-config.conf /etc/apache2/sites-available/default-ssl.conf
+
+
 # Install Certbot for SSL certificate management
 RUN apt-get update && apt-get install -y certbot python3-certbot-apache
 
