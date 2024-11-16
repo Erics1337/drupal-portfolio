@@ -17,9 +17,3 @@ COPY . /var/www/html
 
 # Install Composer dependencies, including Drupal core
 RUN composer install
-
-# Set the working directory to the web root
-WORKDIR /var/www/html
-
-RUN composer install
-
