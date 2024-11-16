@@ -10,6 +10,7 @@ services:
       - "80:80"
     volumes:
       - ./:/var/www/html
+      - ../letsencrypt:/etc/letsencrypt  # Mount letsencrypt folder to persist SSL certificates
     environment:
       DRUPAL_DB_HOST: db
       DRUPAL_DB_NAME: drupal
