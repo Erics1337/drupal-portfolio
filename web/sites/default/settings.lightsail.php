@@ -27,7 +27,7 @@ $settings['file_temp_path'] = '/tmp';
 $settings['trusted_host_patterns'] = [
   '^localhost$',
   '^127\.0\.0\.1$',
-  '^http://54.205.25.75/$',
+  '^54\.205\.25\.75$',
   '^ericsdrupalportfolio.com$',
 ];
 
