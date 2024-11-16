@@ -14,11 +14,11 @@ RUN composer global require drush/drush && \
 # Update the Apache configuration file to point to the Drupal web root
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/web|' /etc/apache2/sites-available/000-default.conf && \
     sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf && \
-    sed -i '/<\/VirtualHost>/i \n\
+    sed -i '/<\/VirtualHost>/i \
         SSLEngine on\n\
         SSLCertificateFile /etc/letsencrypt/live/ericsdrupalportfolio.com/fullchain.pem\n\
-        SSLCertificateKeyFile /etc/letsencrypt/live/ericsdrupalportfolio.com/privkey.pem\n' /etc/apache2/sites-available/000-default.conf
-
+        SSLCertificateKeyFile /etc/letsencrypt/live/ericsdrupalportfolio.com/privkey.pem' /etc/apache2/sites-available/000-default.conf
+        
 # Set the working directory to the project root (where composer.json is located)
 WORKDIR /var/www/html
 
