@@ -1,11 +1,12 @@
-# Dockerfile for Drupal 10 with Apache
+# Use the official Drupal image as a base
 FROM drupal:10-apache
 
-# Install nano and unzip for editing and extraction purposes (optional)
-RUN apt-get update && apt-get install -y nano unzip
-
-# Enable Apache rewrite module for Drupal clean URLs
+# Enable Apache rewrite module for clean URLs
 RUN a2enmod rewrite
+
+# Update the Apache configuration file to point to the Drupal web root
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/web|' /etc/apache2/sites-available/000-default.conf && \
+    sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 # Set the working directory to the project root (where composer.json is located)
 WORKDIR /var/www/html
@@ -15,3 +16,6 @@ COPY . /var/www/html
 
 # Install Composer dependencies, including Drupal core
 RUN composer install
+
+# Restart Apache service
+CMD ["apache2-foreground"]

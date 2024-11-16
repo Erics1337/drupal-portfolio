@@ -21,8 +21,7 @@ services:
   db:
     build:
       context: .
-      dockerfile: dockerfile-mariadb
-    image: custom-mariadb-fix
+    image: mariadb
     ports:
       - "3306:3306"
     environment:
