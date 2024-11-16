@@ -38,3 +38,4 @@ $settings['trusted_host_patterns'] = [
 
 // Allow installation scripts to write the settings file when needed.
 $settings['config_sync_directory'] = 'sites/default/files/config/sync';
+ 
