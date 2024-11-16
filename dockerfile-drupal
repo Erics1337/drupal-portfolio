@@ -7,6 +7,9 @@ RUN a2enmod rewrite ssl
 # Copy your custom SSL Apache configuration into the container
 COPY ./apache/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 
+# Update the Apache configuration file to point to the correct DocumentRoot
+RUN sed -i 's|DocumentRoot /var/www/html/web|DocumentRoot /var/www/html|' /etc/apache2/sites-available/default-ssl.conf
+
 # Install Certbot for SSL certificate management
 RUN apt-get update && apt-get install -y certbot python3-certbot-apache
 
