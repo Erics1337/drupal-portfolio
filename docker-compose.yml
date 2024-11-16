@@ -11,8 +11,11 @@ services:
       - "443:443"
     volumes:
       - ./web:/var/www/html:rw
-      - ../letsencrypt:/etc/letsencrypt
+      # - ../letsencrypt:/etc/letsencrypt
       - ./apache:/etc/apache2/sites-available
+      - /etc/letsencrypt/live/ericsdrupalportfolio.com:/etc/letsencrypt/live/ericsdrupalportfolio.com:ro
+      - /etc/letsencrypt/archive/ericsdrupalportfolio.com:/etc/letsencrypt/archive/ericsdrupalportfolio.com:ro
+      - /etc/letsencrypt/renewal/ericsdrupalportfolio.com.conf:/etc/letsencrypt/renewal/ericsdrupalportfolio.com.conf:ro      
     environment:
       DRUPAL_DB_HOST: db
       DRUPAL_DB_NAME: drupal
