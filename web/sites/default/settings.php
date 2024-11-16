@@ -34,7 +34,8 @@ $config['system.logging']['error_level'] = 'verbose';
 
 
 // Automatic Platform.sh settings.
-if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
+// Only include this file if the environment variable IS_PLATFORMSH is set.
+if (getenv('IS_PLATFORMSH') == 'true' && file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
 }
 
