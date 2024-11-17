@@ -30,11 +30,11 @@
 				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
 					<section class="blog__wrap blog__item style-two">
 						<div class="blog__thumb">
-							<a href="blog-details.html">
+							<a href="{{ path('entity.node.canonical', {'node': row.content['#row']._entity.nid.value}) }}">
 								<img src="{{file_url(row.content['#row']._entity.field_image.entity.fileuri)}}" alt="image not found">
 							</a>
 							<div class="blog__btn-circle">
-								<a href="#" class="circle-btn is-bg-white">
+								<a href="{{ path('entity.node.canonical', {'node': row.content['#row']._entity.nid.value}) }}" class="circle-btn is-bg-white">
 									<span class="icon__box">
 										<i class="fa-regular fa-arrow-right-long"></i>
 									</span>
@@ -44,7 +44,7 @@
 						<div class="blog__content">
 							<div class="blog__content-top">
 								<div class="blog__tag is-bg-light">
-									<a href="blog-details.html">{{ row.content['#row']._entity.field_category.0.entity.name.value }}</a>
+									<a href="{{ path('entity.node.canonical', {'node': row.content['#row']._entity.nid.value}) }}">{{ row.content['#row']._entity.field_category.0.entity.name.value }}</a>
 								</div>
 								<div class="blog__meta">
 									<span>
@@ -54,7 +54,7 @@
 								</div>
 							</div>
 							<h5 class="blog__title">
-								<a href="#">{{ row.content['#row']._entity.title[0].value }}</a>
+								<a href="{{ path('entity.node.canonical', {'node': row.content['#row']._entity.nid.value}) }}">{{ row.content['#row']._entity.title[0].value }}</a>
 							</h5>
 							<div class="blog__content-bottom">
 								<div class="blog__author">
