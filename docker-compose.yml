@@ -24,6 +24,7 @@ services:
       IS_LIGHTSAIL_ENV: 'true'  # Set this to include the Lightsail-specific settings
     depends_on:
       - db
+    restart: unless-stopped
 
   db:
     image: mariadb:10.5
@@ -37,6 +38,6 @@ services:
       MYSQL_DATABASE: drupal
       MYSQL_USER: drupaluser
       MYSQL_PASSWORD: your_password
-
+    restart: unless-stopped
 volumes:
   db_data:
