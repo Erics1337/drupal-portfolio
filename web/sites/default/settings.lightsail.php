@@ -2,7 +2,7 @@
 
 // Set Redis as the default cache backend.
 $settings['redis.connection']['interface'] = 'PhpRedis';
-$settings['redis.connection']['host'] = 'redis'; // The name of the Redis container
+$settings['redis.connection']['host'] = 'drupal-portfolio-redis-1'; // The name of the Redis container
 $settings['redis.connection']['port'] = 6379;
 
 // Always set the default cache to use Redis
