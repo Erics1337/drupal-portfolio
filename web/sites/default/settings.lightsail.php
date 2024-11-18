@@ -14,7 +14,7 @@ $settings['cache']['bins']['discovery'] = 'cache.backend.redis';
 $settings['cache']['bins']['config'] = 'cache.backend.redis';
 
 // Include Redis services file
-$settings['container_yamls'][] = 'web/modules/contrib/redis/redis.services.yml';
+$settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
 
 // Set lock and queue services to use Redis
 $settings['redis.connection']['lock'] = TRUE;
