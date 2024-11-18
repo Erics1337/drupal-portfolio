@@ -44,6 +44,7 @@ services:
   
   redis:
     image: redis:alpine
+    container_name: drupal-portfolio-redis
     ports:
       - "6379:6379"
 
