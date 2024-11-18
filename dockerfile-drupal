@@ -30,5 +30,8 @@ RUN chmod 666 /var/www/html/web/sites/default/settings.php || true
 # Install Composer dependencies, including Drupal core
 RUN composer install
 
+# Install PHP Redis extension
+RUN apt-get update && apt-get install -y php-redis
+
 # Restart Apache service
 CMD ["apache2-foreground"]

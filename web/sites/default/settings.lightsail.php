@@ -1,5 +1,25 @@
 <?php
 
+// Set Redis as the default cache backend.
+$settings['redis.connection']['interface'] = 'PhpRedis';
+$settings['redis.connection']['host'] = 'redis'; // The name of the Redis container
+$settings['redis.connection']['port'] = 6379;
+
+// Always set the default cache to use Redis
+$settings['cache']['default'] = 'cache.backend.redis';
+
+// Use Redis for caching bootstrap, discovery, and configuration
+$settings['cache']['bins']['bootstrap'] = 'cache.backend.redis';
+$settings['cache']['bins']['discovery'] = 'cache.backend.redis';
+$settings['cache']['bins']['config'] = 'cache.backend.redis';
+
+// Include Redis services file
+$settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
+
+// Set lock and queue services to use Redis
+$settings['redis.connection']['lock'] = TRUE;
+$settings['queue_default'] = 'queue.redis';
+
 // Database connection settings
 $databases = [
   'default' => [
