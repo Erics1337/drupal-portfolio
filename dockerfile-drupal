@@ -31,7 +31,7 @@ RUN chmod 666 /var/www/html/web/sites/default/settings.php || true
 RUN composer install
 
 # Install PHP Redis extension
-RUN apt-get update && apt-get install -y php-redis
+RUN apt-get update && apt-get install -y php8.2-redis
 
 # Restart Apache service
 CMD ["apache2-foreground"]
