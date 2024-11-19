@@ -16,7 +16,7 @@ COPY ./apache/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 RUN a2ensite default-ssl
 
 # Update the Apache configuration file to point to the correct DocumentRoot
-RUN sed -i 's|DocumentRoot /var/www/html/web|DocumentRoot /var/www/html|' /etc/apache2/sites-available/default-ssl.conf
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|' /etc/apache2/sites-available/default-ssl.conf
 
 # Set the working directory to the project root (where composer.json is located)
 WORKDIR /var/www/html
