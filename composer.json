@@ -50,6 +50,11 @@
     "drupal-scaffold": {
       "locations": {
         "web-root": "web/"
+      },
+      "patches": {
+        "drupal/google_analytics": {
+          "Fix issue with count() in VisiblityTracker": "patches/google_analytics_visibility_fix.patch"
+        }
       }
     },
     "installer-paths": {

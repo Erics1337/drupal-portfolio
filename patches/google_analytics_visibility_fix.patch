@@ -1,0 +1,42 @@
+diff --git a/.gitignore b/.gitignore
+index 75cac16..55b398f 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -2,7 +2,7 @@
+ /drush/contrib/
+ /vendor/
+ /web/core/
+-/web/modules/contrib/
++# /web/modules/contrib/
+ /web/themes/contrib/
+ /web/profiles/contrib/
+ /web/libraries/
+diff --git a/composer.json b/composer.json
+index 1307b5a..86f5d1b 100644
+--- a/composer.json
++++ b/composer.json
+@@ -50,6 +50,11 @@
+     "drupal-scaffold": {
+       "locations": {
+         "web-root": "web/"
++      },
++      "patches": {
++        "drupal/google_analytics": {
++          "Fix issue with count() in VisiblityTracker": "patches/google_analytics_visibility_fix.patch"
++        }
+       }
+     },
+     "installer-paths": {
+diff --git a/composer.lock b/composer.lock
+index 4e8f037..45022ba 100644
+--- a/composer.lock
++++ b/composer.lock
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "98e8026fe3e6674e921acd119aa1f77b",
++    "content-hash": "79ceb4682477ebbae6b049e944b8751c",
+     "packages": [
+         {
+             "name": "asm89/stack-cors",
