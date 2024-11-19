@@ -1,0 +1,104 @@
+uuid: 0d2a6581-3b43-49b2-b5ff-37e20cd488ae
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.who_i_am
+    - field.field.block_content.who_i_am.body
+    - field.field.block_content.who_i_am.field_2nd_image
+    - field.field.block_content.who_i_am.field_experiance
+    - field.field.block_content.who_i_am.field_first_image
+    - field.field.block_content.who_i_am.field_skill_2_text
+    - field.field.block_content.who_i_am.field_skill_2_value
+    - field.field.block_content.who_i_am.field_skill_text
+    - field.field.block_content.who_i_am.field_skill_value
+    - field.field.block_content.who_i_am.field_who_i_am
+    - image.style.382x241
+  module:
+    - image
+    - text
+id: block_content.who_i_am.default
+targetEntityType: block_content
+bundle: who_i_am
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_2nd_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: file
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_experiance:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_first_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 382x241
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_skill_2_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_skill_2_value:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_skill_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_skill_value:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_who_i_am:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

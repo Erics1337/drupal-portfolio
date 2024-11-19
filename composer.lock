@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a304a0de0ae99fae75c53b8a63efbaff",
+    "content-hash": "98e8026fe3e6674e921acd119aa1f77b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1904,6 +1904,146 @@
                 "source": "https://gitlab.com/drupalspoons/devel",
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
+            }
+        },
+        {
+            "name": "drupal/google_analytics",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/google_analytics.git",
+                "reference": "4.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/google_analytics-4.0.2.zip",
+                "reference": "4.0.2",
+                "shasum": "6deec511373e4659e42ff494c8729434728e37d7"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "require-dev": {
+                "drupal/token": "^1.7"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.2",
+                    "datestamp": "1662768595",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/49388/committers"
+                },
+                {
+                    "name": "budda",
+                    "homepage": "https://www.drupal.org/user/13164"
+                },
+                {
+                    "name": "ixismark",
+                    "homepage": "https://www.drupal.org/user/3632333"
+                },
+                {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "mglaman",
+                    "homepage": "https://www.drupal.org/user/2416470"
+                },
+                {
+                    "name": "roberto.rivera.ixis",
+                    "homepage": "https://www.drupal.org/user/3632325"
+                }
+            ],
+            "description": "Allows your site to be tracked by Google Analytics by adding a Javascript tracking code to every page.",
+            "homepage": "https://www.drupal.org/project/google_analytics",
+            "support": {
+                "source": "https://git.drupalcode.org/project/google_analytics",
+                "issues": "https://www.drupal.org/project/issues/google_analytics"
+            }
+        },
+        {
+            "name": "drupal/markdown",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/markdown.git",
+                "reference": "3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/markdown-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "ae33f2819c0f2591484ae02921781fb3ea783330"
+            },
+            "require": {
+                "composer/semver": "^1.0 || ^2.0 || ^3.0",
+                "drupal/core": "^9.1 || ^10",
+                "php": ">=5.5.9"
+            },
+            "suggest": {
+                "league/commonmark": "The PHP CommonMark parser is a robust, highly-extensible Markdown parser for PHP based on the CommonMark and Github-Flavored Markdown specifications."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.1",
+                    "datestamp": "1704727858",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Halliwell (markhalliwell)",
+                    "homepage": "https://www.drupal.org/u/markhalliwell",
+                    "role": "D8+ Maintainer"
+                },
+                {
+                    "name": "Gisle Hannemyr (gisle)",
+                    "homepage": "https://www.drupal.org/u/gisle",
+                    "role": "D7 Maintainer"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                },
+                {
+                    "name": "markdorison",
+                    "homepage": "https://www.drupal.org/user/346106"
+                }
+            ],
+            "description": "Provides Markdown integration for Drupal and allows content to be formatted in a simple plain-text syntax that is transformed into valid HTML.",
+            "homepage": "https://www.drupal.org/project/markdown",
+            "support": {
+                "source": "https://git.drupalcode.org/project/markdown",
+                "issues": "https://www.drupal.org/project/markdown"
             }
         },
         {

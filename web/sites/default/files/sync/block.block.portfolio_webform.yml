@@ -1,0 +1,26 @@
+uuid: 330d90ef-5686-45f2-bb64-e1baf71f931d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - webform.webform.get_in_touch
+  module:
+    - webform
+  theme:
+    - portfolio
+id: portfolio_webform
+theme: portfolio
+region: hidden
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Webform - Get in Touch'
+  label_display: '0'
+  provider: webform
+  webform_id: get_in_touch
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility: {  }

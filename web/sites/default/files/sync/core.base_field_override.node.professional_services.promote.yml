@@ -1,0 +1,22 @@
+uuid: 072ea9e6-0948-4cd1-873a-444c699a3b02
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.professional_services
+id: node.professional_services.promote
+field_name: promote
+entity_type: node
+bundle: professional_services
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

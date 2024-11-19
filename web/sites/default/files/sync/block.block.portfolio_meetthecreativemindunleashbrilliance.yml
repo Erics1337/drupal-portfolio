@@ -1,0 +1,25 @@
+uuid: cec210b6-9d23-4659-abdf-4f6e9821b19a
+langcode: en-gb
+status: true
+dependencies:
+  content:
+    - 'block_content:who_i_am:e9dfb357-fbcf-4e9c-9b9d-1737d5a6ea1b'
+  module:
+    - block_content
+  theme:
+    - portfolio
+id: portfolio_meetthecreativemindunleashbrilliance
+theme: portfolio
+region: service
+weight: -6
+provider: null
+plugin: 'block_content:e9dfb357-fbcf-4e9c-9b9d-1737d5a6ea1b'
+settings:
+  id: 'block_content:e9dfb357-fbcf-4e9c-9b9d-1737d5a6ea1b'
+  label: 'Meet the Creative Mind Unleash Brilliance'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

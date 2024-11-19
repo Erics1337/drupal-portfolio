@@ -1,0 +1,26 @@
+uuid: 0b86c154-8298-4714-9677-573059eec84c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.who_i_am
+    - field.storage.block_content.body
+    - filter.format.full_html
+  module:
+    - text
+id: block_content.who_i_am.body
+field_name: body
+entity_type: block_content
+bundle: who_i_am
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

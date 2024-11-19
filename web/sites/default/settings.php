@@ -33,6 +33,16 @@ $settings['file_public_path'] = 'sites/default/files';
 $config['system.logging']['error_level'] = 'verbose';
 
 
+
+/**
+ * Sets the Google Analytics account ID.
+ *
+ * This configuration setting specifies the Google Analytics account ID to use
+ * for tracking website usage. The value 'G-DGV7Y7JDQS' should be replaced with
+ * the actual account ID provided by Google Analytics.
+ */
+$config['google_analytics.settings']['account'] = 'G-DGV7Y7JDQS';
+
 // Automatic Platform.sh settings.
 // Only include this file if the environment variable IS_PLATFORMSH is set.
 if (getenv('IS_PLATFORMSH') == 'true' && file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {

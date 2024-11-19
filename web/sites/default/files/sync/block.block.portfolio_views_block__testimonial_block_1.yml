@@ -1,0 +1,24 @@
+uuid: 16005aea-b365-4700-9fa6-bb74a453ed0a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.testimonial
+  module:
+    - views
+  theme:
+    - portfolio
+id: portfolio_views_block__testimonial_block_1
+theme: portfolio
+region: service
+weight: -5
+provider: null
+plugin: 'views_block:testimonial-block_1'
+settings:
+  id: 'views_block:testimonial-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

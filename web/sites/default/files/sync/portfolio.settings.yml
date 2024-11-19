@@ -1,0 +1,25 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: themes/portfolio/logo.png
+favicon:
+  use_default: 1
+facebook: '#facebook'
+twitter: '#Twitter'
+linkedin: 'https://linkedin.com/in/ericsdesign'
+copyright: 'Copyright @ Eric Swanson 2025. All Right Reserved'
+resume: 'https://www.icloud.com/iclouddrive/07ajwE2ifNhrit1lo5NASOYyA#SwansonDeveloperResume2024-11-06'
+hero_title: 'Hello, I’m Eric'
+hero_description: 'I run a specialized web development service focused on building high-quality web apps. From concept to deployment, I deliver clean design and robust coding solutions.'
+hero_linkedin: 'https://linkedin.com/in/ericsdesign'
+hero_image: themes/portfolio/assets/images/heroimage.png
+hero_title2: 'Crafting Drupal Solutions That Work—Anywhere'
+getintouch_title: 'Feel Free To Contact me'
+getintouch_des: "I'm generally available during regular business hours, but I'll make an effort to respond to your message as soon as possible"
+getintouch_phone: '+17346942779'
+getintouch_email: erics1337@gmail.com
+getintouch_location: 'Gunnison, Colorado'

@@ -1,0 +1,25 @@
+uuid: 8ada0d0f-2d6d-49f2-a4f4-43a0cf0d152b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.professional_services.field_description
+    - field.field.node.professional_services.field_icon
+    - node.type.professional_services
+  module:
+    - user
+id: node.professional_services.teaser
+targetEntityType: node
+bundle: professional_services
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_description: true
+  field_icon: true
+  langcode: true

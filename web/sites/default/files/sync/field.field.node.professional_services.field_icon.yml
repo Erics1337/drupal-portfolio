@@ -1,0 +1,19 @@
+uuid: 4c4321ce-3c4b-40b5-ab49-4d9937ba10b7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icon
+    - node.type.professional_services
+id: node.professional_services.field_icon
+field_name: field_icon
+entity_type: node
+bundle: professional_services
+label: Icon
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
