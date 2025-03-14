@@ -12,7 +12,14 @@ console/
 /web/sites/*/settings.local.php
 
 # Ignore Drupal's file directory
-# /web/sites/*/files/
+/web/sites/*/files/
+
+# Ignore Twig cache files
+/web/sites/*/files/php/
+/web/sites/*/files/css/
+/web/sites/*/files/js/
+/web/sites/*/files/styles/
+/web/sites/*/files/php/twig/
 
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
@@ -32,3 +39,20 @@ drush-backups
 .console
 /.editorconfig
 /.gitattributes
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+/web/sites/*/logs/
+
+# Ignore database dumps
+*.sql
+*.sql.gz
+
+# Ignore generated translation files
+/web/sites/*/translations/
+
+# Ignore composer.lock to allow for different environments
+# composer.lock

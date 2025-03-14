@@ -1,0 +1,14 @@
+name: Client Testimonials
+type: module
+description: 'Allows users to submit testimonials from the frontend with an approval workflow.'
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:block
+  - drupal:views
+  - drupal:file
+  - drupal:image
+  - drupal:options
+  - drupal:user
+  - drupal:datetime
+configure: entity.testimonial.settings

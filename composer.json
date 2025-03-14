@@ -24,6 +24,8 @@
     "drupal/google_analytics": "^4.0",
     "drupal/markdown": "^3.0",
     "drupal/markdown_easy": "^1.0",
+    "drupal/plausible": "^2.1",
+    "drupal/plausible_tracking": "^1.0",
     "drupal/redis": "^1.8",
     "drupal/twig_tweak": "^3.3",
     "drupal/webform": "^6.2",

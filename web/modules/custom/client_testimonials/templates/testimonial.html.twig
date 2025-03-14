@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a testimonial.
+ *
+ * Available variables:
+ * - elements: All elements of the testimonial.
+ *   - testimonial: The testimonial entity.
+ *   - view_mode: The view mode being used.
+ * - content: Prerendered content.
+ * - testimonial_text: The formatted testimonial text.
+ * - client_name: The client name.
+ * - submitted_date: The formatted submission date.
+ *
+ * @see template_preprocess_testimonial()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{# This template is now used as a fallback only. Main rendering is done directly in the controller and block #}
+<div{{ attributes.addClass('testimonial') }}>
+  <div class="testimonial__content">
+    <div class="testimonial__text">
+      {{ testimonial_text|raw }}
+    </div>
+
+    <div class="testimonial__info">
+      {% if content.client_image %}
+        <div class="testimonial__image">
+          {{ content.client_image }}
+        </div>
+      {% endif %}
+
+      <div class="testimonial__client">
+        <div class="testimonial__name">
+          {{ client_name }}
+        </div>
+        <div class="testimonial__date">
+          {{ submitted_date }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+submit testimonials:
+  title: 'Submit testimonials'
+  description: 'Allows users to submit testimonials via the frontend form.'
+  restrict access: false
+
+review testimonials:
+  title: 'Review testimonials'
+  description: 'Allows admin users to review and edit submitted testimonials.'
+  restrict access: true
+
+publish testimonials:
+  title: 'Publish testimonials'
+  description: 'Allows users to publish or unpublish testimonials.'
+  restrict access: true
+
+administer testimonials:
+  title: 'Administer testimonials'
+  description: 'Administer testimonial settings and configuration.'
+  restrict access: true

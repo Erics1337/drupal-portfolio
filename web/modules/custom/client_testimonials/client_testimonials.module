@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * @file
+ * Contains client_testimonials.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_help().
+ */
+function client_testimonials_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.client_testimonials':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Client Testimonials module provides functionality for users to submit testimonials from the frontend.') . '</p>';
+      $output .= '<p>' . t('Testimonials require approval before being published and displayed publicly.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function client_testimonials_theme() {
+  return [
+    'testimonial' => [
+      'render element' => 'elements',
+      'template' => 'testimonial',
+    ],
+    'testimonial_block' => [
+      'variables' => [
+        'testimonials' => [],
+        'settings' => [],
+      ],
+      'template' => 'testimonial-block',
+    ],
+    'block__testimonial_block' => [
+      'template' => 'block--testimonial-block',
+      'base hook' => 'block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_mail().
+ */
+function client_testimonials_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'testimonial_submission':
+      $message['subject'] = t('New testimonial submitted');
+      $message['body'][] = t('A new testimonial has been submitted by @name.', ['@name' => $params['name']]);
+      $message['body'][] = t('Please review it at: @url', ['@url' => $params['url']]);
+      break;
+
+    case 'testimonial_approved':
+      $message['subject'] = t('Your testimonial has been approved');
+      $message['body'][] = t('Hello @name,', ['@name' => $params['name']]);
+      $message['body'][] = t('Your testimonial has been reviewed and approved. It is now published on our site.');
+      $message['body'][] = t('Thank you for your feedback!');
+      break;
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function client_testimonials_entity_presave(EntityInterface $entity) {
+  // Set submitted date for new testimonials.
+  if ($entity->getEntityTypeId() === 'testimonial' && $entity->isNew()) {
+    $entity->set('submitted_date', \Drupal::time()->getRequestTime());
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for blocks.
+ */
+function client_testimonials_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Add our custom block template suggestion for the testimonial block.
+  if (isset($variables['elements']['#plugin_id']) && $variables['elements']['#plugin_id'] === 'testimonial_block') {
+    $suggestions[] = 'block__testimonial_block';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function client_testimonials_form_testimonial_submission_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Add our custom class to the form.
+  $form['#attributes']['class'][] = 'testimonial-submission-form';
+
+  // Attach our custom library.
+  $form['#attached']['library'][] = 'client_testimonials/testimonial_form';
+
+  // Add a container for the form.
+  $form['#prefix'] = '<div class="testimonial-submission-container"><div class="testimonial-submission-header">
+    <h2 class="testimonial-submission-title">Share Your Testimonial</h2>
+    <p class="testimonial-submission-description">We value your feedback and would love to hear about your experience working with us. Your testimonial will help others understand the quality of our service.</p>
+  </div>';
+  $form['#suffix'] = '</div>';
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function client_testimonials_preprocess_html(&$variables) {
+  // Add a class to the body on the testimonial submission page.
+  $current_path = \Drupal::service('path.current')->getPath();
+  if ($current_path == '/testimonials/submit') {
+    $variables['attributes']['class'][] = 'page-testimonial-submission';
+  }
+  elseif ($current_path == '/testimonials') {
+    $variables['attributes']['class'][] = 'path-testimonials';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for testimonial.
+ */
+function client_testimonials_preprocess_testimonial(&$variables) {
+  // Ensure testimonial variable is set.
+  if (isset($variables['elements']['testimonial'])) {
+    $testimonial = $variables['elements']['testimonial'];
+
+    // Add the entity to content variable to ensure it's available in the template.
+    $variables['content'] = [];
+
+    // Add client image to content if it exists
+    $image_field_names = ['client_image', 'image', 'field_client_image', 'field_image'];
+    foreach ($image_field_names as $field_name) {
+      if ($testimonial->hasField($field_name) && !$testimonial->get($field_name)->isEmpty()) {
+        $variables['content']['client_image'] = $testimonial->get($field_name)->view('testimonial_thumb');
+        break;
+      }
+    }
+
+    // Add content variables for easier access
+    if ($testimonial->hasField('testimonial_text') && !$testimonial->get('testimonial_text')->isEmpty()) {
+      $variables['testimonial_text'] = $testimonial->get('testimonial_text')->value;
+    } else {
+      $variables['testimonial_text'] = '';
+    }
+
+    if ($testimonial->hasField('client_name') && !$testimonial->get('client_name')->isEmpty()) {
+      $variables['client_name'] = $testimonial->get('client_name')->value;
+    } else {
+      $variables['client_name'] = '';
+    }
+
+    if ($testimonial->hasField('submitted_date') && !$testimonial->get('submitted_date')->isEmpty()) {
+      $variables['submitted_date'] = \Drupal::service('date.formatter')
+        ->format($testimonial->get('submitted_date')->value, 'custom', 'F j, Y');
+    } else {
+      $variables['submitted_date'] = '';
+    }
+  }
+}

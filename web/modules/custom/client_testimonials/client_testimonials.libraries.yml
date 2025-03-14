@@ -1,0 +1,18 @@
+testimonials:
+  version: 1.x
+  css:
+    theme:
+      css/testimonials.css: {}
+  js:
+    js/testimonials.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+testimonial_form:
+  version: 1.x
+  css:
+    theme:
+      css/testimonial-form.css: {}
+  dependencies:
+    - core/drupal

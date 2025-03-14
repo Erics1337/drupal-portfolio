@@ -1,0 +1,57 @@
+entity.testimonial.collection:
+  path: '/admin/content/testimonials'
+  defaults:
+    _entity_list: 'testimonial'
+    _title: 'Testimonials'
+  requirements:
+    _permission: 'review testimonials'
+
+entity.testimonial.add_form:
+  path: '/admin/content/testimonials/add'
+  defaults:
+    _entity_form: 'testimonial.add'
+    _title: 'Add testimonial'
+  requirements:
+    _permission: 'review testimonials'
+
+entity.testimonial.edit_form:
+  path: '/admin/content/testimonials/{testimonial}/edit'
+  defaults:
+    _entity_form: 'testimonial.edit'
+    _title: 'Edit testimonial'
+  requirements:
+    _permission: 'review testimonials'
+
+entity.testimonial.delete_form:
+  path: '/admin/content/testimonials/{testimonial}/delete'
+  defaults:
+    _entity_form: 'testimonial.delete'
+    _title: 'Delete testimonial'
+  requirements:
+    _permission: 'review testimonials'
+
+entity.testimonial.settings:
+  path: '/admin/structure/testimonial'
+  defaults:
+    _form: '\Drupal\client_testimonials\Form\TestimonialSettingsForm'
+    _title: 'Testimonial settings'
+  requirements:
+    _permission: 'administer testimonials'
+
+client_testimonials.submit_form:
+  path: '/testimonials/submit'
+  defaults:
+    _form: '\Drupal\client_testimonials\Form\TestimonialSubmissionForm'
+    _title: 'Submit a testimonial'
+  requirements:
+    _permission: 'submit testimonials'
+  options:
+    _admin_route: FALSE
+
+client_testimonials.testimonial_list:
+  path: '/testimonials'
+  defaults:
+    _controller: '\Drupal\client_testimonials\Controller\TestimonialController::listTestimonials'
+    _title: 'Testimonials'
+  requirements:
+    _permission: 'access content'

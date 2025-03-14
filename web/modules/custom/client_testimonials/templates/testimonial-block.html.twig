@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block of testimonials.
+ *
+ * Available variables:
+ * - testimonials: An array of testimonial data.
+ * - settings: Block configuration settings.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="testimonials-block">
+  {% if testimonials|length > 0 %}
+    <div class="section__title-wrapper section__title-space">
+      <span class="section__subtitle bg-field">TESTIMONIALS</span>
+      <h2 class="section__title">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-block__items">
+      {% for testimonial in testimonials %}
+        <div class="testimonials-block__item">
+          <div class="testimonials-block__content">
+            <div class="testimonials-block__text">
+              {{ testimonial.testimonial_text|nl2br }}
+            </div>
+
+            <div class="testimonials-block__info">
+              {% if settings.display_image and testimonial.image %}
+                <div class="testimonials-block__image">
+                  {{ testimonial.image }}
+                </div>
+              {% endif %}
+
+              <div class="testimonials-block__client">
+                <div class="testimonials-block__name">{{ testimonial.client_name }}</div>
+                <div class="testimonials-block__date">{{ testimonial.submitted_date|date('F j, Y') }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {# Add submission CTA section #}
+    <div class="testimonials-block__submit-section">
+      <div class="testimonials-block__submit-content">
+        <h3 class="testimonials-block__submit-title">Share Your Experience</h3>
+        <p class="testimonials-block__submit-text">I value your feedback! If you've worked with me, I'd love to hear about your experience.</p>
+        <a href="/testimonials/submit" class="testimonials-block__submit-button">Submit Your Testimonial</a>
+      </div>
+    </div>
+  {% else %}
+    <p>{{ 'No testimonials available at this time.'|t }}</p>
+
+    {# Add submission CTA section even when there are no testimonials #}
+    <div class="testimonials-block__submit-section">
+      <div class="testimonials-block__submit-content">
+        <h3 class="testimonials-block__submit-title">Be the First to Share</h3>
+        <p class="testimonials-block__submit-text">Have you worked with me? I'd love to hear about your experience!</p>
+        <a href="/testimonials/submit" class="testimonials-block__submit-button">Submit Your Testimonial</a>
+      </div>
+    </div>
+  {% endif %}
+</div>

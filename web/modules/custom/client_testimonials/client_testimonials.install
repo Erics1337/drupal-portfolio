@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the client_testimonials module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function client_testimonials_install() {
+  \Drupal::messenger()->addStatus(t('Client Testimonials module has been installed.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function client_testimonials_uninstall() {
+  \Drupal::messenger()->addStatus(t('Client Testimonials module has been uninstalled.'));
+}
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ */
+function client_testimonials_schema() {
+  $schema = [];
+
+  // This schema is handled by the Entity API, but we can define additional schema elements here if needed.
+
+  return $schema;
+}
+
+/**
+ * Create testimonial entity tables and fields.
+ */
+function client_testimonials_update_8001() {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $entity_type = $entity_type_manager->getDefinition('testimonial');
+
+  // Create the table.
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_type);
+  return t('Created testimonial table in the database.');
+}
+
+/**
+ * Update testimonial block configuration to hide title.
+ */
+function client_testimonials_update_9101() {
+  $block_configs = \Drupal::entityTypeManager()
+    ->getStorage('block')
+    ->loadByProperties(['plugin' => 'testimonial_block']);
+
+  $updated = 0;
+  foreach ($block_configs as $block) {
+    $settings = $block->get('settings');
+    $settings['label_display'] = FALSE;
+    $block->set('settings', $settings);
+    $block->save();
+    $updated++;
+  }
+
+  return t('@count testimonial block(s) updated to hide title.', ['@count' => $updated]);
+}

@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Custom theme implementation to display a testimonial block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ * - content: The content of this block.
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: HTML attributes for the title.
+ * - content_attributes: HTML attributes for the content element.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ */
+#}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {# Hide the title by not rendering it #}
+  {{ title_suffix }}
+  <div{{ content_attributes }}>
+    {{ content }}
+  </div>
+</div>
