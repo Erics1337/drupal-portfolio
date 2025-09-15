@@ -18234,3 +18234,37 @@ body .ui-tooltip {
 .bt-padding{
   padding: 20px 0px;
 }
+
+  /* Hero image tweaks: smaller size and hover bob animation */
+  .banner__thumb-wrapper .banner__thumb {
+    max-width: 60px;
+    margin: 0 auto;
+    padding: 60px 0; /* more top/bottom padding */
+  }
+
+  @media (min-width: 768px) {
+  .banner__thumb-wrapper .banner__thumb {
+    max-width: 80px;
+  }
+  }
+
+  @media (min-width: 1200px) {
+  .banner__thumb-wrapper .banner__thumb {
+    max-width: 100px;
+  }
+  }
+
+  .banner__thumb-wrapper .banner__thumb img {
+    width: 100% !important; /* ensure the image follows the new container size */
+  }
+
+  @keyframes hover-bob {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  /* Make bob continuous */
+  .banner__thumb-wrapper .banner__thumb {
+    animation: hover-bob 2s ease-in-out infinite;
+  }
